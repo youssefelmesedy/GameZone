@@ -1,0 +1,297 @@
+﻿
+/* تحسين زر Add Game */
+.add-game-btn {
+    background-color: #945fe2; /* لون خلفية الزر */
+    color: white; /* لون النص */
+    border-radius: 10px; /* حواف دائرية */
+    padding: 15px 30px; /* تباعد داخلي مناسب */
+    font-weight: bold; /* جعل النص سميكًا */
+    transition: all 0.3s ease; /* تأثير التدرج عند التفاعل مع الزر */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للزر */
+}
+
+    /* التأثير عند المرور بالماوس على الزر */
+    .add-game-btn:hover {
+        background-color: #6c4fcb; /* تغيير اللون عند التمرير */
+        transform: translateY(-3px); /* رفع الزر قليلاً */
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* زيادة الظل */
+    }
+
+    /* التأثير عند النقر على الزر */
+    .add-game-btn:active {
+        transform: translateY(3px); /* دفع الزر لأسفل عند الضغط */
+    }
+
+    /* تحسين الأيقونة داخل الزر */
+    .add-game-btn i {
+        margin-right: 5px; /* تباعد بين الأيقونة والنص */
+        font-size: 1.5rem; /* تكبير حجم الأيقونة */
+    }
+
+    /* التأثير عند المرور على الأيقونة */
+    .add-game-btn:hover i {
+        color: #fff; /* تغيير لون الأيقونة عند المرور */
+        transform: rotate(10deg); /* تدوير الأيقونة قليلاً */
+    }
+
+/* صورة الغلاف */
+.game-image {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+    .game-image::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+.game-item:hover .game-image::before {
+    opacity: 1;
+}
+
+.game-category-badge {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+.category-label {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* تفاصيل اللعبة */
+.game-details {
+    background-color: #7158fb;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.game-item:hover .game-title {
+    color: #6c757d;
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* رموز الأجهزة */
+.game-platform-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+    .game-platform-icons i {
+        font-size: 1.5rem;
+        color: #6c757d;
+        transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+        .game-platform-icons i:hover {
+            transform: scale(1.3) rotate(10deg);
+            color: #945fe2;
+            text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+        }
+
+/* تأثير إضافي على البطاقة عند التمرير */
+.game-item:hover .game-details {
+    background: linear-gradient(to bottom, #ffffff, #e6e6e6);
+}
+
+/* تحسين شكل الجدول */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+    .table:hover {
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+.table-hover tbody tr:hover {
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease;
+}
+
+.table thead th {
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    padding: 1rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+.table tbody td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 1rem;
+    font-size: 0.95rem;
+    color: #333333;
+    transition: color 0.3s ease;
+}
+
+.table tbody tr:hover td {
+    color: #555555;
+}
+/* تحسين شكل الغلاف */
+.game-cover {
+    height: 150px;
+    width: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .game-cover:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+/* تحسين شكل الاسم */
+.game-name {
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+    .game-name:hover {
+        color: #6015cd;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+/* تحسين شكل الشارات */
+.badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    background-color: #6c757d;
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    .badge:hover {
+        background-color: #5a6268;
+        color: #ffffff;
+    }
+/* تحسين شكل الأجهزة */
+.devices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.device-icon {
+    font-size: 1.5rem;
+    color: #945fe2;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+    .device-icon:hover {
+        transform: scale(1.2);
+        color: #5a47c2;
+    }
+/* تحسين شكل الأزرار */
+.btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    margin: 0.5rem; /* إضافة المسافة بين الأزرار */
+    display: inline-block; /* تتيح توزيع الأزرار بشكل أفقي */
+}
+
+.btn-primary {
+    background-color: #6c757d;
+    color: #ffffff;
+}
+
+    .btn-primary:hover {
+        background-color: #5a6268;
+        color: #ffffff;
+    }
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+    .btn-danger:hover {
+        background-color: #c82333;
+        color: #ffffff;
+    }
+/* تنسيق أزرار SweetAlert */
+.swal2-popup {
+    font-size: 1.1rem !important;
+    background: #1f1f1f !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: #28a745 !important; /* لون الأخضر */
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    transition: background-color 0.3s ease !important;
+}
+
+    .swal2-styled.swal2-confirm:hover {
+        background-color: #218838 !important; /* أخضر أغمق للتفاعل */
+    }
+
+.swal2-styled.swal2-cancel {
+    background-color: #dc3545 !important; /* لون الأحمر */
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    transition: background-color 0.3s ease !important;
+}
+
+    .swal2-styled.swal2-cancel:hover {
+        background-color: #c82333 !important; /* أحمر أغمق للتفاعل */
+    }
+
+

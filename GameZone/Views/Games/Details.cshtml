@@ -1,0 +1,27 @@
+﻿@model Game
+@{
+    ViewData["Title"] = Model.Name;
+}
+<div class="modern-card border-success rounded-4 mt-5 overflow-hidden">
+    <div class="modern-card-body">
+        <div class="modern-row">
+            <!-- تفاصيل المنتج -->
+            <div class="product-info">
+                <h3 class="product-title">@Model.Name</h3>
+                <p class="product-description">@Model.Description</p>
+                <span class="product-category">@Model.category.Name</span>
+                <div class="product-devices mt-3">
+                    @foreach (var device in Model.Devices)
+                    {
+                        <i class="@device.Device.Icon device-icon"></i>
+                    }
+                </div>
+            </div>
+            <!-- صورة المنتج -->
+            <div class="product-image-wrapper">
+                <img src="@($"{FileStettings.ImagesPath}/{Model.Cover}")" alt="@Model.Name" class="product-image" />
+            </div>
+        </div>
+    </div>
+</div>
+    

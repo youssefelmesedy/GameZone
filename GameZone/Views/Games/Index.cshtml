@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Game>
+@{
+    ViewData["Title"] = "Games";
+}
+<a class="btn btn-secondary btn-lg mb-3 add-game-btn" asp-action="Create" asp-controller="Games">
+    <i class="bi bi-plus-circle-dotted"></i>
+    Add Game
+</a>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning alert-no-games mt-5">
+        <h4 class="alert-heading">No Games!</h4>
+        <p class="mb-0"> No Games Were Added yet.</p>
+    </div>
+}
+else
+{
+    <table class="table table-bordered table-hover games-table">
+        <thead class="table-dark">
+            <tr>
+                <th>Cover</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Devices</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var game in Model)
+            {
+                <tr>
+                    <!-- صورة الغلاف -->
+                    <td style="width: 15%;">
+                        <div class="game-cover" style="background-image: url(@($"{FileStettings.ImagesPath}/{game.Cover}"));"></div>
+                    </td>
+                    <!-- اسم اللعبة -->
+                    <td>
+                        <h5 class="game-name">@game.Name</h5>
+                    </td>
+                    <!-- فئة اللعبة -->
+                    <td>
+                        <span class="badge game-category">@game.category.Name</span>
+                    </td>
+                    <!-- الأجهزة -->
+                    <td>
+                        <div class="devices">
+                            @foreach (var gamedevice in game.Devices)
+                            {
+                                <i class="@gamedevice.Device.Icon device-icon"></i>
+                            }
+                        </div>
+                    </td>
+                    <!-- الأزرار -->
+                    <td class="text-center table-actions">
+                        <!-- زر التعديل -->
+                        <a class="btn btn-primary btn-sm me-2" asp-action="Edit" asp-route-id="@game.Id">Edit</a>
+                        <!-- زر الحذف -->
+                        <a class="btn btn-danger btn-sm js-delete" data-id="@game.Id">Delete</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@section Scripts{
+    <script src="~/js/gamesdelete.js " asp-append-version="true"></script>
+}

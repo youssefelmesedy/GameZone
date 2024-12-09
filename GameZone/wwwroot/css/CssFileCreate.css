@@ -1,0 +1,191 @@
+﻿/* التنسيق العام للنموذج */
+.game-formCreate {
+    background-color: #1d1b2a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+/* رأس النموذج */
+.form-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* تنسيق الحقول */
+.form-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* تنسيق كل مجموعة من الحقول */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* تنسيق العناوين */
+.form-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #e6e6e6;
+}
+
+/* تنسيق المدخلات */
+.form-input, .form-select, .form-textarea, .form-input-file {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #5c4b8f;
+    background-color: #2c2137;
+    color: #ffffff;
+    font-size: 14px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+    /* تنسيق المدخلات عند التفاعل معها */
+    .form-input:focus, .form-select:focus, .form-textarea:focus, .form-input-file:focus {
+        border-color: #9b73d3;
+        outline: none;
+        background-color: #3e2c54;
+    }
+
+/* الحقل الخاص برسائل الخطأ */
+.form-error {
+    color: #ff4d4f;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* النصوص التوضيحية تحت المدخلات */
+.form-helper {
+    color: #9e7bb5;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* زر الحفظ */
+.form-button {
+    padding: 12px 25px;
+    background-color: #9b73d3;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    /* التأثير عند مرور الفأرة فوق الزر */
+    .form-button:hover {
+        background-color: #7c5a9f;
+    }
+
+/* تنسيق الصورة المعاينة */
+.Cover-Preview {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid #5c4b8f;
+}
+
+    /* تنسيق الصورة عندما لا تكون ظاهرة */
+    .Cover-Preview.d-none {
+        display: none;
+    }
+
+/* استجابة التصميم للأجهزة الصغيرة */
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+    }
+
+    .form-left {
+        width: 100%;
+    }
+
+    .form-right {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* تخصيص select2 */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 100%;
+    border-radius: 5px; /* إضافة انحناء للحواف */
+    border: none;
+}
+
+/* تخصيص النص في الحقل select */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #fff;
+    line-height: 20px; /* محاذاة النص داخل الـ select */
+}
+
+/* تخصيص القائمة المنسدلة */
+.select2-dropdown.select2-dropdown--below {
+    background-color: #30115e;
+    border-radius: 5px; /* زيادة انحناء حواف القائمة */
+}
+
+/* تخصيص العنصر المحدد في القائمة */
+.select2-container--default.select2-results__option--highlighted[aria-selected] {
+    background-color: #3c3c66;
+}
+
+/* تخصيص العنصر المحدد */
+.select2-container--default .select2-results__option[aria-selected=true] {
+    background-color: #3c3c66;
+}
+
+/* تخصيص الـ select2 */
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+    background-color: #3c3c66;
+    border: none;
+    border-radius: 5px; /* انحناء للحواف */
+}
+
+    /* تخصيص العناصر في قائمة select2 المتعددة */
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        background-color: #3c3c66;
+        border: 1px solid #250d49;
+    }
+
+    /* تخصيص حذف العنصر في select2 متعدد */
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+        color: #3c3c66;
+    }
+
+/* تخصيص العرض العام للقائمة المنسدلة */
+.select2-dropdown {
+    border-radius: 5px; /* إضافة انحناء للحواف */
+}
+
+/* إضافة الحواف لـ select2 عند التفاعل */
+.select2-container--default .select2-selection--single .select2-selection__arrow,
+.select2-container--default .select2-selection--multiple .select2-selection__arrow {
+    border-radius: 5px;
+    border: none;
+}
+
+/* إزالة التداخل بين المحتوى والعناصر */
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+    padding: 5px; /* إضافة padding للحفاظ على المسافة داخل الحقول */
+    margin: 0; /* إزالة الهوامش */
+}
